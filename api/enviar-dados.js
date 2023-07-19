@@ -42,10 +42,9 @@
 // NOVO CÓDIGO PARA TAMBÉM ENVIAR PRO MEU E-MAIL 
 
 const { MongoClient } = require('mongodb');
-const nodemailer = require('nodemailer');
+const enviarEmail = require('./enviar-email'); // Importe a função enviarEmail
 
-async function conectarAoMongoDB(req) {
-  // Código para conexão com o MongoDB
+async function conectarAoMongoDB(req) { // Adicione o parâmetro 'req' aqui
   const uri = process.env.MONGODB_URI;
   const dbName = process.env.MONGODB_DB;
 
@@ -73,41 +72,23 @@ async function conectarAoMongoDB(req) {
   }
 }
 
-async function enviarEmail(dadosFormulario) {
-  // Configuração do Nodemailer para enviar o email
-  const transporter = nodemailer.createTransport({
-    service: 'Gmail', // Aqui você pode usar o serviço de email de sua preferência
-    auth: {
-      user: 'leaovic@gmail.com', // Coloque o email de origem aqui
-      pass: 'weruqblmjlznxwlw', // Coloque a senha do email de origem aqui
-    },
-  });
-
-  // Opções do email
-  const mailOptions = {
-    from: 'leaovic@gmail.com', // Coloque o email de origem aqui
-    to: 'contato@victorleao.dev.br', // Coloque o email do destinatário aqui
-    subject: 'Novo formulário de contato recebido',
-    text: JSON.stringify(dadosFormulario), // Aqui você pode personalizar o corpo do email com os dados do formulário
-  };
-
-  // Envio do email
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.error('Erro ao enviar o email:', error);
-    } else {
-      console.log('Email enviado com sucesso:', info.response);
-    }
-  });
-}
 
 module.exports = async (req, res) => {
   try {
     await conectarAoMongoDB(req);
-    await enviarEmail(req.body); // Chama a função enviarEmail passando os dados do formulário
-    res.status(200).send('Dados do formulário recebidos, inseridos no MongoDB e email enviado com sucesso!');
+
+    // Chama a função enviarEmail passando os dados do formulário no objeto req.body
+    const resultadoEnvioEmail = await enviarEmail(req.body);
+
+    // Verifica se o email foi enviado com sucesso e envia a resposta para o cliente
+    if (resultadoEnvioEmail.success) {
+      res.status(200).send('Dados do formulário recebidos, inseridos no MongoDB e email enviado com sucesso!');
+    } else {
+      res.status(500).send('Ocorreu um erro ao processar a solicitação.');
+    }
   } catch (error) {
     console.error('Erro ao processar a solicitação:', error);
     res.status(500).send('Ocorreu um erro ao processar a solicitação');
   }
 };
+
