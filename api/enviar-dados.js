@@ -79,7 +79,7 @@ async function enviarEmail(dadosFormulario) {
     service: 'Gmail', // Aqui você pode usar o serviço de email de sua preferência
     auth: {
       user: 'leaovic@gmail.com', // Coloque o email de origem aqui
-      pass: '{!False}', // Coloque a senha do email de origem aqui
+      pass: 'weruqblmjlznxwlw', // Coloque a senha do email de origem aqui
     },
   });
 
