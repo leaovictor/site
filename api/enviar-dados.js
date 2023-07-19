@@ -12,7 +12,7 @@ async function conectarAoMongoDB(req) { // Adicione o parâmetro 'req' aqui
 
     const db = client.db(dbName);
 
-    const collection = db.collection('contato-site'); // Substitua 'nome-da-colecao' pelo nome da coleção que deseja usar
+    const collection = db.collection('contato'); // Substitua 'nome-da-colecao' pelo nome da coleção que deseja usar
 
     const dadosFormulario = req.body; // Supondo que os dados do formulário estejam disponíveis no objeto req.body
 
