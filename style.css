@@ -107,7 +107,7 @@ section {
   display: flex;
   align-items: center;
   padding: 0 9%;
-  background: url(/fotoPrincipal2.png) no-repeat;
+  background: url(/images/fotoPrincipal2.png) no-repeat;
   background-size: cover;
   background-position: center;
 }
