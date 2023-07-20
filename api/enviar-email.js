@@ -6,12 +6,12 @@ const nodemailer = require("nodemailer");
 async function enviarEmailFormatado(dadosFormulario) {
   try {
     const transporter = nodemailer.createTransport({
-      host: "smtp.hostinger.com.br",
+      host: "smtp.zoho.com",
       port: 465,
       secure: true,
       auth: {
-        user: "joao.silva@radarbetsmail.cloud", // Substitua pelo seu email de origem
-        pass: "Duca@2783", // Substitua pela senha gerada para o seu email de origem
+        user: "no-reply@victorleao.dev.br", // Substitua pelo seu email de origem
+        pass: "#9Tebyqv", // Substitua pela senha gerada para o seu email de origem
       },
     });
 
