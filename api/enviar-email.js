@@ -7,7 +7,7 @@ async function enviarEmailFormatado(dadosFormulario) {
   try {
     const transporter = nodemailer.createTransport({
       host: "smtp.zoho.com",
-      port: 465,
+      port: 587,
       secure: true,
       auth: {
         user: "no-reply@victorleao.dev.br", // Substitua pelo seu email de origem
