@@ -2,6 +2,7 @@
 
 const { MongoClient } = require("mongodb");
 const enviarEmail = require("./enviar-email"); // Importe a função enviarEmail
+const moment = require('moment-timezone');
 
 async function conectarAoMongoDB(req) {
   // Adicione o parâmetro 'req' aqui
@@ -20,9 +21,10 @@ async function conectarAoMongoDB(req) {
 
     const dadosFormulario = req.body; // Supondo que os dados do formulário estejam disponíveis no objeto req.body
 
-    // Obter a data e hora atual do envio do formulário
-    const dataEnvio = new Date();
-    dadosFormulario.last_review = dataEnvio.toISOString(); // Converte a data para o formato ISO
+      // Obter a data e hora atual do envio do formulário no fuso horário de Brasília
+      const dataEnvio = moment().tz('America/Sao_Paulo').format();
+
+      dadosFormulario.shipping = dataEnvio;
 
     // Inserir os dados na coleção
     const resultadoInsercao = await collection.insertOne(dadosFormulario);
