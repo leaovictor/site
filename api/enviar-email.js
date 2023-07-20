@@ -91,7 +91,7 @@ async function enviarEmailFormatado(dadosFormulario) {
           </ul>
           <p><strong>Mensagem:</strong></p>
           <p>${dadosFormulario.message}</p>
-          <p>Fim da mensagem</p>
+          <p>**********Fim da mensagem**********</p>
           <p>Equipe do myprogrammer</p>
         </div>
       </body>
