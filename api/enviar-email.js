@@ -86,3 +86,5 @@ async function enviarEmailFormatado(dadosFormulario) {
 
 module.exports = enviarEmailFormatado;
 
+// FALTA CRIAR O ALERTA DE MENSAGEM ENVIADA COM SUCESSO! 
+
