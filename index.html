@@ -359,6 +359,30 @@
             </div>
         </form>
         <div id="alertMessage"></div>
+
+        <script>
+            const form = document.querySelector("form");
+        
+            form.addEventListener("submit", async (event) => {
+              event.preventDefault();
+        
+              // Realizar a requisição AJAX para enviar o formulário
+              const formData = new FormData(form);
+              const response = await fetch("/api/enviar-dados", {
+                method: "POST",
+                body: formData,
+              });
+              const result = await response.json();
+        
+              // Exibir o alerta de acordo com o resultado da requisição
+              const alertMessage = document.getElementById("alertMessage");
+              if (result.success) {
+                alertMessage.innerHTML = '<div class="alert alert-success">E-mail enviado com sucesso!</div>';
+              } else {
+                alertMessage.innerHTML = '<div class="alert alert-danger">Ocorreu um erro ao enviar o e-mail. Por favor, tente novamente mais tarde.</div>';
+              }
+            });
+          </script>
     </section>
 
 
