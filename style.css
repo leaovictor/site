@@ -797,6 +797,10 @@ span {
   animation-delay: calc(0.3s * var(--i));
 }
 
+#contact {
+  padding: 300px;
+}
+
 .animate.scroll {
   transition: 1s ease;
   transition-delay: calc(0.3s / var(--i));
