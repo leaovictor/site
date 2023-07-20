@@ -1,55 +1,22 @@
-// "use strict";
-// const nodemailer = require("nodemailer");
-
-// // Função para enviar o e-mail
-// async function enviarEmail(dadosFormulario) {
-//   try {
-//     const transporter = nodemailer.createTransport({
-//       host: "smtp.hostinger.com.br",
-//       port: 465,
-//       secure: true,
-//       auth: {
-//         user: "joao.silva@radarbetsmail.cloud", // Substitua pelo seu email de origem
-//         pass: "Duca@2783", // Substitua pela senha gerada para o seu email de origem
-//       },
-//     });
-
-//     // Configuração do email
-//     const info = await transporter.sendMail({
-//       from: `"Concierge" <joao.silva@radarbetsmail.cloud>`,
-//       to: "contato@victorleao.dev.br",
-//       subject: dadosFormulario.emailSubject,
-//       text: `Nome: ${dadosFormulario.fullName}\nTelefone: ${dadosFormulario.mobileNumber}\nMensagem: ${dadosFormulario.message}`,
-//     });
-
-//     console.log("Message sent: %s", info.messageId);
-//     return { success: true, message: "Email enviado com sucesso!" };
-//   } catch (error) {
-//     console.error("Erro ao enviar o email:", error);
-//     return { success: false, message: "Ocorreu um erro ao enviar o email." };
-//   }
-// }
-
-// module.exports = enviarEmail;
 
 "use strict";
 const nodemailer = require("nodemailer");
 
 // Função para enviar o e-mail formatado
 async function enviarEmailFormatado(dadosFormulario) {
-  try {
-    const transporter = nodemailer.createTransport({
-      host: "smtp.hostinger.com.br",
-      port: 465,
-      secure: true,
-      auth: {
-        user: "joao.silva@radarbetsmail.cloud", // Substitua pelo seu email de origem
-        pass: "Duca@2783", // Substitua pela senha gerada para o seu email de origem
-      },
-    });
+    try {
+        const transporter = nodemailer.createTransport({
+            host: "smtp.hostinger.com.br",
+            port: 465,
+            secure: true,
+            auth: {
+                user: "joao.silva@radarbetsmail.cloud", // Substitua pelo seu email de origem
+                pass: "Duca@2783", // Substitua pela senha gerada para o seu email de origem
+            },
+        });
 
-    // Corpo do email formatado em HTML
-    const emailHTML = `
+        // Corpo do email formatado em HTML
+        const emailHTML = `
       <!DOCTYPE html>
       <html lang="en">
       <head>
@@ -98,23 +65,41 @@ async function enviarEmailFormatado(dadosFormulario) {
       </html>
     `;
 
-    // Configurações do e-mail
-    const mailOptions = {
-      from: `"Concierge do myprogrammer" <joao.silva@radarbetsmail.cloud>`,
-      to: "contato@victorleao.dev.br",
-      subject: 'Nova mensagem de '+dadosFormulario.fullName,
-      html: emailHTML, // Passando o conteúdo HTML formatado como valor da propriedade 'html'
-    };
+        // Configurações do e-mail
+        const mailOptions = {
+            from: `"Concierge do myprogrammer" <joao.silva@radarbetsmail.cloud>`,
+            to: "contato@victorleao.dev.br",
+            subject: 'Nova mensagem de ' + dadosFormulario.fullName,
+            html: emailHTML, // Passando o conteúdo HTML formatado como valor da propriedade 'html'
+        };
 
-    // Envia o e-mail
-    const info = await transporter.sendMail(mailOptions);
-    console.log("E-mail enviado com sucesso:", info.messageId);
-    return { success: true, message: "E-mail enviado com sucesso!" };
-  } catch (error) {
-    console.error("Erro ao enviar o e-mail:", error);
-    return { success: false, message: "Ocorreu um erro ao enviar o e-mail." };
-  }
-}
+        // Realizar a requisição AJAX para enviar o formulário
+        const formData = new FormData(form);
+        const response = await fetch("/api/enviar-dados", {
+            method: "POST",
+            body: formData,
+        });
+        const result = await response.json();
+
+        // Exibir o alerta de acordo com o resultado da requisição
+        if (result.success) {
+            // Se o e-mail foi enviado com sucesso, exibir alerta de sucesso
+            alert("E-mail enviado com sucesso!");
+        } else {
+            // Se houve um erro no envio do e-mail, exibir alerta de erro
+            alert("Ocorreu um erro ao enviar o e-mail. Por favor, tente novamente mais tarde.");
+        }
+
+
+        //     // Envia o e-mail
+        //     const info = await transporter.sendMail(mailOptions);
+        //     console.log("E-mail enviado com sucesso:", info.messageId);
+        //     return { success: true, message: "E-mail enviado com sucesso!" };
+        //   } catch (error) {
+        //     console.error("Erro ao enviar o e-mail:", error);
+        //     return { success: false, message: "Ocorreu um erro ao enviar o e-mail." };
+        //   }
+    }
   
 
 module.exports = enviarEmailFormatado;
