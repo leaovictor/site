@@ -109,37 +109,22 @@ async function enviarEmailFormatado(dadosFormulario) {
     // Envia o e-mail
     const info = await transporter.sendMail(mailOptions);
     console.log("E-mail enviado com sucesso:", info.messageId);
+
+    // Exibe o alerta de sucesso
+    const alertMessage = document.getElementById("alertMessage");
+    alertMessage.innerHTML = '<div class="alert alert-success">E-mail enviado com sucesso!</div>';
+
     return { success: true, message: "E-mail enviado com sucesso!" };
   } catch (error) {
     console.error("Erro ao enviar o e-mail:", error);
+
+    // Exibe o alerta de erro
+    const alertMessage = document.getElementById("alertMessage");
+    alertMessage.innerHTML = '<div class="alert alert-danger">Ocorreu um erro ao enviar o e-mail. Por favor, tente novamente mais tarde.</div>';
+
     return { success: false, message: "Ocorreu um erro ao enviar o e-mail." };
   }
 }
-
-// Adicione o evento de escuta para o envio do formulário
-document.querySelector("form").addEventListener("submit", async function(event) {
-    event.preventDefault(); // Impede o comportamento padrão de enviar o formulário
-  
-    // Obtenha os dados do formulário
-    const formData = new FormData(event.target);
-    const dadosFormulario = {
-      fullName: formData.get("fullName"),
-      emailAddress: formData.get("emailAddress"),
-      mobileNumber: formData.get("mobileNumber"),
-      emailSubject: formData.get("emailSubject"),
-      message: formData.get("message"),
-    };
-  
-    // Chame a função para enviar o e-mail formatado
-    const resposta = await enviarEmailFormatado(dadosFormulario);
-  
-    // Exiba o resultado do envio do e-mail em um alerta
-    if (resposta.success) {
-      alert("O e-mail foi enviado com sucesso!");
-    } else {
-      alert("Ocorreu um erro ao enviar o e-mail. Por favor, tente novamente mais tarde.");
-    }
-  });
   
 
 module.exports = enviarEmailFormatado;
