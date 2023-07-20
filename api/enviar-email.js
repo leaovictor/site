@@ -91,8 +91,8 @@ async function enviarEmailFormatado(dadosFormulario) {
           </ul>
           <p><strong>Mensagem:</strong></p>
           <p>${dadosFormulario.message}</p>
-          <p>Atenciosamente,</p>
-          <p>Equipe do Seu Site</p>
+          <p>Fim da mensagem</p>
+          <p>Equipe do myprogrammer</p>
         </div>
       </body>
       </html>
@@ -100,9 +100,9 @@ async function enviarEmailFormatado(dadosFormulario) {
 
     // Configurações do e-mail
     const mailOptions = {
-      from: `"Concierge" <joao.silva@radarbetsmail.cloud>`,
+      from: `"Concierge do myprogrammer" <joao.silva@radarbetsmail.cloud>`,
       to: "contato@victorleao.dev.br",
-      subject: dadosFormulario.emailSubject,
+      subject: 'Nova mensagem de '+dadosFormulario.fullName,
       html: emailHTML, // Passando o conteúdo HTML formatado como valor da propriedade 'html'
     };
 
