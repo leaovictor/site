@@ -4,7 +4,6 @@
 const { MongoClient } = require("mongodb");
 const enviarEmail = require("./enviar-email"); // Importe a função enviarEmail
 const moment = require('moment-timezone');
-const path = require('path');
 
 async function conectarAoMongoDB(req) {
   // Adicione o parâmetro 'req' aqui
@@ -52,10 +51,29 @@ module.exports = async (req, res) => {
 
     // Verifica se o email foi enviado com sucesso e envia a resposta para o cliente
     if (resultadoEnvioEmail.success) {
-      // Redirecionar para a página de agradecimento após o envio do formulário
-      const thankyouPagePath = path.join(__dirname, './thankyou.html');
-      res.writeHead(302, { 'Location': thankyouPagePath });
-      res.end();
+      res
+        .redirect('/api/thankyou.html');
+    } else {
+      res.status(500).send("Ocorreu um erro ao processar a solicitação.");
+    }
+  } catch (error) {
+    console.error("Erro ao processar a solicitação:", error);
+    res.status(500).send("Ocorreu um erro ao processar a solicitação");
+  }
+  
+
+};
+
+module.exports = async (req, res) => {
+  try {
+    const resultadoEnvioMongoDB = await conectarAoMongoDB(req);
+
+    // Chama a função enviarEmail passando os dados do formulário no objeto req.body
+    const resultadoEnvioEmail = await enviarEmail(req.body);
+
+    // Verifica se o email foi enviado com sucesso e envia a resposta para o cliente
+    if (resultadoEnvioMongoDB.success && resultadoEnvioEmail.success) {
+      res.status(200).send("Dados do formulário recebidos e email enviado com sucesso!");
     } else {
       res.status(500).send("Ocorreu um erro ao processar a solicitação.");
     }
@@ -64,9 +82,6 @@ module.exports = async (req, res) => {
     res.status(500).send("Ocorreu um erro ao processar a solicitação");
   }
 };
-
-
-
 
 
 
