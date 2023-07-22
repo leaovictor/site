@@ -83,10 +83,6 @@ async function enviarEmailFormatado(dadosFormulario) {
   }
 }
 
-setTimeout(() => {
-  res.redirect('/thankyou.html');
-}, 5000);
-
 module.exports = enviarEmailFormatado;
 
 // FALTA CRIAR O ALERTA DE MENSAGEM ENVIADA COM SUCESSO! e Email pro cliente
