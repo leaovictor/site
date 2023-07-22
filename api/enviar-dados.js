@@ -97,7 +97,7 @@ module.exports = async (req, res) => {
         .status(200)
         .send(
           "Dados do formulário recebidos, inseridos no MongoDB e email enviado com sucesso!"
-        ).redirect('./thankyou.html');
+        );
     } else {
       res.status(500).send("Ocorreu um erro ao processar a solicitação.");
     }
