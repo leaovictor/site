@@ -52,7 +52,7 @@ module.exports = async (req, res) => {
     if (resultadoEnvioEmail.success) {
       res
       // Redirecionar para a página de agradecimento após o envio do formulário
-      res.redirect("/thankyou.html");
+      res.redirect("../thankyou.html");
     } else {
       res.status(500).send("Ocorreu um erro ao processar a solicitação.");
     }
