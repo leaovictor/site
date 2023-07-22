@@ -62,9 +62,6 @@ module.exports = async (req, res) => {
     res.status(500).send("Ocorreu um erro ao processar a solicitação");
   }
 
-};
-
-module.exports = async (req, res) => {
   try {
     await conectarAoMongoDB(req);
 
@@ -82,7 +79,6 @@ module.exports = async (req, res) => {
     console.error("Erro ao processar a solicitação:", error);
     res.status(500).send("Ocorreu um erro ao processar a solicitação");
   }
+
 };
-
-
 
