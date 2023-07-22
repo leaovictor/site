@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You</title>
-  <link rel="stylesheet" href="style.css"> <!-- Substitua "styles.css" pelo nome do seu arquivo CSS -->
+  <link rel="stylesheet" href="styles.css"> <!-- Substitua "styles.css" pelo nome do seu arquivo CSS -->
   <style>
     /* Estilo adicional específico para a página de agradecimento */
     body {
@@ -45,9 +45,33 @@
   <div class="thankyou-message">
     <p>Thank you for getting in touch!</p>
     <p>Your message has been successfully sent.</p>
+    <p>Redirecting back to the Home page in <span id="countdown">5</span> seconds...</p>
   </div>
 
   <a href="index.html" class="back-to-home">Back to Home</a>
+
+  <script>
+    // Função para redirecionar para a página inicial (index.html) após 5 segundos
+    function redirectToHome() {
+      window.location.href = "index.html";
+    }
+
+    // Inicializa o contador com o tempo em segundos
+    let countdownTime = 5;
+    document.getElementById("countdown").innerText = countdownTime;
+
+    // Reduz o contador a cada segundo
+    const countdownInterval = setInterval(function() {
+      countdownTime--;
+      document.getElementById("countdown").innerText = countdownTime;
+      
+      // Quando o contador chegar a 0, redireciona para a página inicial
+      if (countdownTime <= 0) {
+        clearInterval(countdownInterval);
+        redirectToHome();
+      }
+    }, 1000); // Executa a cada 1000 milissegundos (1 segundo)
+  </script>
 </body>
 
 </html>
