@@ -56,10 +56,10 @@ window.onscroll = () => {
 
  // Código para exibir um alerta após o envio do formulário
  document.getElementById('contact-form').addEventListener('submit', function(event) {
-  //   event.preventDefault(); // Impede o envio normal do formulário
+    event.preventDefault(); // Impede o envio normal do formulário
 
     // Exibe o alerta
-  //   alert('Formulário enviado com sucesso! Obrigado por entrar em contato.');
+    alert('Formulário enviado com sucesso! Obrigado por entrar em contato.');
 
     // Redireciona para a página de agradecimento
     window.location.href = '/thankyou.html';
