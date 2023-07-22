@@ -63,3 +63,4 @@ window.onscroll = () => {
 
     // Redireciona para a página de agradecimento
     window.location.href = '/thankyou.html';
+ })
