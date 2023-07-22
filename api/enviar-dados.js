@@ -94,7 +94,7 @@ module.exports = async (req, res) => {
     // Verifica se o email foi enviado com sucesso e envia a resposta para o cliente
     if (resultadoEnvioEmail.success) {
       res
-        .redirect('/thankyou.html');
+        .redirect('/api/thankyou.html');
     } else {
       res.status(500).send("Ocorreu um erro ao processar a solicitação.");
     }
