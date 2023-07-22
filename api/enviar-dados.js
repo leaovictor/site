@@ -1,6 +1,8 @@
+// NOVO CÓDIGO PARA TAMBÉM ENVIAR PRO MEU E-MAIL
+
 const { MongoClient } = require("mongodb");
 const enviarEmail = require("./enviar-email"); // Importe a função enviarEmail
-const moment = require('moment-timezone');
+const moment = require("moment-timezone");
 
 async function conectarAoMongoDB(req) {
   // Adicione o parâmetro 'req' aqui
@@ -19,10 +21,10 @@ async function conectarAoMongoDB(req) {
 
     const dadosFormulario = req.body; // Supondo que os dados do formulário estejam disponíveis no objeto req.body
 
-      // Obter a data e hora atual do envio do formulário no fuso horário de Brasília
-      const dataEnvio = moment().tz('America/Sao_Paulo').format();
+    // Obter a data e hora atual do envio do formulário no fuso horário de Brasília
+    const dataEnvio = moment().tz("America/Sao_Paulo").format();
 
-      dadosFormulario.shipping = dataEnvio;
+    dadosFormulario.shipping = dataEnvio;
 
     // Inserir os dados na coleção
     const resultadoInsercao = await collection.insertOne(dadosFormulario);
@@ -31,12 +33,8 @@ async function conectarAoMongoDB(req) {
       "Dados do formulário inseridos com sucesso:",
       resultadoInsercao
     );
-
-    // Redirecionar para a página de agradecimento após o envio do formulário
-    res.redirect('/thankyou.html');
   } catch (error) {
     console.error("Erro ao conectar ao MongoDB:", error);
-    res.status(500).send("Ocorreu um erro ao processar a solicitação");
   } finally {
     await client.close();
     console.log("Conexão com o MongoDB encerrada");
@@ -52,7 +50,13 @@ module.exports = async (req, res) => {
 
     // Verifica se o email foi enviado com sucesso e envia a resposta para o cliente
     if (resultadoEnvioEmail.success) {
-      // Nenhuma resposta é enviada aqui, pois o redirecionamento já ocorreu antes
+      res
+        .status(200)
+        .send(
+          "Dados do formulário recebidos, inseridos no MongoDB e email enviado com sucesso!"
+        );
+      // Redirecionar para a página de agradecimento após o envio do formulário
+      res.redirect("/thankyou.html");
     } else {
       res.status(500).send("Ocorreu um erro ao processar a solicitação.");
     }
