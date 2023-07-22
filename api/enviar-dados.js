@@ -51,10 +51,6 @@ module.exports = async (req, res) => {
     // Verifica se o email foi enviado com sucesso e envia a resposta para o cliente
     if (resultadoEnvioEmail.success) {
       res
-        .status(200)
-        .send(
-          "Dados do formulário recebidos, inseridos no MongoDB e email enviado com sucesso!"
-        );
       // Redirecionar para a página de agradecimento após o envio do formulário
       res.redirect("/thankyou.html");
     } else {
