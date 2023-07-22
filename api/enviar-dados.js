@@ -62,4 +62,10 @@ module.exports = async (req, res) => {
     console.error("Erro ao processar a solicitação:", error);
     res.status(500).send("Ocorreu um erro ao processar a solicitação");
   }
+  setTimeout(() => {
+    res.redirect('/thankyou.html');
+  }, 5000);
 };
+
+
+
