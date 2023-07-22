@@ -82,7 +82,10 @@ async function enviarEmailFormatado(dadosFormulario) {
     return { success: false, message: "Ocorreu um erro ao enviar o e-mail." };
   }
 }
-  
+
+setTimeout(() => {
+  res.redirect('/thankyou.html');
+}, 5000);
 
 module.exports = enviarEmailFormatado;
 
