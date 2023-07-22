@@ -42,36 +42,43 @@
 </head>
 
 <body>
-  <div class="thankyou-message">
-    <p>Thank you for getting in touch!</p>
-    <p>Your message has been successfully sent.</p>
-    <p>Redirecting back to the Home page in <span id="countdown">5</span> seconds...</p>
-  </div>
-
-  <a href="index.html" class="back-to-home">Back to Home</a>
-
-  <script>
-    // Função para redirecionar para a página inicial (index.html) após 5 segundos
-    function redirectToHome() {
-      window.location.href = "index.html";
-    }
-
-    // Inicializa o contador com o tempo em segundos
-    let countdownTime = 5;
-    document.getElementById("countdown").innerText = countdownTime;
-
-    // Reduz o contador a cada segundo
-    const countdownInterval = setInterval(function() {
-      countdownTime--;
-      document.getElementById("countdown").innerText = countdownTime;
+    <body>
+        <div class="thankyou-message">
+          <p>Thank you for getting in touch!</p>
+          <p>Your message has been successfully sent.</p>
+          <p>Redirecting back to the Home page in <span id="countdown">5</span> seconds...</p>
+        </div>
       
-      // Quando o contador chegar a 0, redireciona para a página inicial
-      if (countdownTime <= 0) {
-        clearInterval(countdownInterval);
-        redirectToHome();
-      }
-    }, 1000); // Executa a cada 1000 milissegundos (1 segundo)
-  </script>
-</body>
+        <a href="index.html" class="back-to-home">Back to Home</a>
+      
+        <script>
+          // Contagem regressiva e redirecionamento após 5 segundos
+          let countdownTime = 5;
+          document.getElementById("countdown").innerText = countdownTime;
+      
+          const countdownInterval = setInterval(() => {
+            countdownTime--;
+            document.getElementById("countdown").innerText = countdownTime;
+      
+            if (countdownTime <= 0) {
+              clearInterval(countdownInterval);
+              redirectToHome();
+            }
+          }, 1000);
+      
+          function redirectToHome() {
+            // Redirecionamento
+            window.location.href = "index.html";
+          }
+      
+          // Exibir alerta de agradecimento após o redirecionamento
+          window.onload = function() {
+            setTimeout(() => {
+              alert("Thank you for your message!");
+            }, 5100); // O valor é 100 milissegundos a mais do que o tempo de redirecionamento (5 segundos)
+          };
+        </script>
+      </body>
+      
 
 </html>
