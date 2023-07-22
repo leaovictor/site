@@ -1,4 +1,3 @@
-
 "use strict";
 const nodemailer = require("nodemailer");
 
@@ -69,9 +68,14 @@ async function enviarEmailFormatado(dadosFormulario) {
     const mailOptions = {
       from: `"Concierge do myprogrammer" <no-reply@victorleao.dev.br>`,
       to: "contato@victorleao.dev.br",
-      subject: 'Nova mensagem de '+dadosFormulario.fullName,
+      subject: "Nova mensagem de " + dadosFormulario.fullName,
       html: emailHTML, // Passando o conteúdo HTML formatado como valor da propriedade 'html'
     };
+
+    // Redirecionar para a página de agradecimento após 5 segundos
+    setTimeout(() => {
+      res.redirect("/thankyou.html");
+    }, 5000);
 
     // Envia o e-mail
     const info = await transporter.sendMail(mailOptions);
@@ -83,44 +87,6 @@ async function enviarEmailFormatado(dadosFormulario) {
   }
 }
 
-app.post('/api/enviar-dados', async (req, res) => {
-  const { fullName, emailAddress, mobileNumber, emailSubject, message } = req.body;
-
-  // Salvar os dados no MongoDB Atlas
-  MongoClient.connect(mongoURL, (err, client) => {
-    if (err) {
-      console.error('Erro ao conectar ao MongoDB:', err);
-      return;
-    }
-
-    const db = client.db('seu-banco-de-dados');
-    const collection = db.collection('contatos');
-
-    collection.insertOne({
-      fullName,
-      emailAddress,
-      mobileNumber,
-      emailSubject,
-      message,
-    });
-
-    client.close();
-  });
-
-  // Enviar e-mail formatado
-  const emailResult = await enviarEmailFormatado(req.body);
-  if (!emailResult.success) {
-    console.error('Erro ao enviar o e-mail:', emailResult.message);
-    // Aqui você pode tratar o erro do envio de e-mail, se necessário
-  }
-
-  // Redirecionar para a página de agradecimento após 5 segundos
-  setTimeout(() => {
-    res.redirect('/thankyou.html');
-  }, 5000);
-});
-
 module.exports = enviarEmailFormatado;
 
 // FALTA CRIAR O ALERTA DE MENSAGEM ENVIADA COM SUCESSO! e Email pro cliente
-
