@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You</title>
+  <link rel="stylesheet" href="style.css"> <!-- Substitua "styles.css" pelo nome do seu arquivo CSS -->
+  <style>
+    /* Estilo adicional específico para a página de agradecimento */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .thankyou-message {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      color: var(--main-color);
+    }
+
+    .back-to-home {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--main-color);
+      color: var(--text-color);
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.7rem;
+    }
+
+    .back-to-home:hover {
+      background-color: #0084b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="thankyou-message">
+    <p>Thank you for getting in touch!</p>
+    <p>Your message has been successfully sent.</p>
+  </div>
+
+  <a href="index.html" class="back-to-home">Back to Home</a>
+</body>
+
+</html>
