@@ -1,5 +1,3 @@
-// NOVO CÓDIGO PARA TAMBÉM ENVIAR PRO MEU E-MAIL
-
 const { MongoClient } = require("mongodb");
 const enviarEmail = require("./enviar-email"); // Importe a função enviarEmail
 const moment = require('moment-timezone');
@@ -33,8 +31,12 @@ async function conectarAoMongoDB(req) {
       "Dados do formulário inseridos com sucesso:",
       resultadoInsercao
     );
+
+    // Redirecionar para a página de agradecimento após o envio do formulário
+    res.redirect('/thankyou.html');
   } catch (error) {
     console.error("Erro ao conectar ao MongoDB:", error);
+    res.status(500).send("Ocorreu um erro ao processar a solicitação");
   } finally {
     await client.close();
     console.log("Conexão com o MongoDB encerrada");
@@ -50,11 +52,7 @@ module.exports = async (req, res) => {
 
     // Verifica se o email foi enviado com sucesso e envia a resposta para o cliente
     if (resultadoEnvioEmail.success) {
-      res
-        .status(200)
-        .send(
-          "Dados do formulário recebidos, inseridos no MongoDB e email enviado com sucesso!"
-        );
+      // Nenhuma resposta é enviada aqui, pois o redirecionamento já ocorreu antes
     } else {
       res.status(500).send("Ocorreu um erro ao processar a solicitação.");
     }
@@ -62,8 +60,4 @@ module.exports = async (req, res) => {
     console.error("Erro ao processar a solicitação:", error);
     res.status(500).send("Ocorreu um erro ao processar a solicitação");
   }
-
 };
-
-
-
