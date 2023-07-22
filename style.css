@@ -283,14 +283,16 @@ section {
   right: 0;
   width: 50%;
   height: 100%;
-  background: black;
+  background: transparent; /* Altera a cor de fundo inicial para transparente */
   opacity: 0.8;
   transition: 3s;
 }
 
 .home-imgHover:hover {
-  background: transparent;
+  background: #000000; /* Define a cor de fundo preto quando o elemento está sendo alvo do efeito hover */
+  opacity: 0.5; /* Opcional: se desejar que a opacidade seja 1 (totalmente opaco) quando estiver no hover */
 }
+
 
 .about {
   display: flex;
