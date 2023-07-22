@@ -33,7 +33,7 @@ async function conectarAoMongoDB(req) {
     }
 
     // Redirecionar para a página de agradecimento após o envio do formulário e e-mail
-    res.redirect('/thankyou.html');
+    res.redirect('../thankyou.html');
   } catch (error) {
     console.error("Erro ao processar a solicitação:", error);
     res.status(500).send("Ocorreu um erro ao processar a solicitação");
