@@ -334,7 +334,7 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2></span>
     <!-- </span><span class="animate scroll" style="--i:1;"> -->
-        <form action="/api/enviar-dados" method="POST" id="contact-form">
+        <form action="/api/enviar-dados" method="POST" id="contact-form" target="_blank">
             <div class="input-box">
                 <div class="input-field">
                     <input type="text" placeholder="Full Name" name="fullName" required>
@@ -384,6 +384,16 @@
         </div>
     </footer>
     <script src="./script.js"></script>
+    <script>
+        document.getElementById("contact-form").onsubmit = function() {
+          window.location.href = "thankyou.html";
+          // Se você estiver usando um servidor para processar o formulário,
+          // remova o comentário abaixo para evitar que o formulário envie
+          // a requisição normalmente e recarregue a página inteira.
+          // return false;
+        };
+      </script>
+      
 
 </body>
 
