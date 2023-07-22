@@ -51,4 +51,8 @@ window.onscroll = () => {
     "show-animate",
     this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight
   );
+
+  document.getElementById("contact-form").onsubmit = function() {
+    window.location.href = "thankyou.html";
+  };
 };
