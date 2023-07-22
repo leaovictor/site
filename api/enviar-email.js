@@ -72,11 +72,6 @@ async function enviarEmailFormatado(dadosFormulario) {
       html: emailHTML, // Passando o conteúdo HTML formatado como valor da propriedade 'html'
     };
 
-    // Redirecionar para a página de agradecimento após 5 segundos
-    setTimeout(() => {
-      res.redirect("/thankyou.html");
-    }, 5000);
-
     // Envia o e-mail
     const info = await transporter.sendMail(mailOptions);
     console.log("E-mail enviado com sucesso:", info.messageId);
