@@ -44,7 +44,6 @@ async function conectarAoMongoDB(req) {
 }
 
 module.exports = async (req, res) => {
-  
   try {
     await conectarAoMongoDB(req);
 
@@ -54,7 +53,9 @@ module.exports = async (req, res) => {
     // Verifica se o email foi enviado com sucesso e envia a resposta para o cliente
     if (resultadoEnvioEmail.success) {
       // Redirecionar para a página de agradecimento após o envio do formulário
-      res.redirect('/api/thankyou.html');
+      const thankyouPagePath = path.join(__dirname, '../thankyou.html');
+      res.writeHead(302, { 'Location': thankyouPagePath });
+      res.end();
     } else {
       res.status(500).send("Ocorreu um erro ao processar a solicitação.");
     }
@@ -62,6 +63,10 @@ module.exports = async (req, res) => {
     console.error("Erro ao processar a solicitação:", error);
     res.status(500).send("Ocorreu um erro ao processar a solicitação");
   }
-
 };
+
+
+
+
+
 
