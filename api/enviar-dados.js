@@ -44,24 +44,7 @@ async function conectarAoMongoDB(req) {
 }
 
 module.exports = async (req, res) => {
-  try {
-    await conectarAoMongoDB(req);
-
-    // Chama a função enviarEmail passando os dados do formulário no objeto req.body
-    const resultadoEnvioEmail = await enviarEmail(req.body);
-
-    // Verifica se o email foi enviado com sucesso e envia a resposta para o cliente
-    if (resultadoEnvioEmail.success) {
-      res
-        .redirect('/api/thankyou.html');
-    } else {
-      res.status(500).send("Ocorreu um erro ao processar a solicitação.");
-    }
-  } catch (error) {
-    console.error("Erro ao processar a solicitação:", error);
-    res.status(500).send("Ocorreu um erro ao processar a solicitação");
-  }
-
+  
   try {
     await conectarAoMongoDB(req);
 
