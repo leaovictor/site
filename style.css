@@ -235,7 +235,7 @@ section {
 .home-sci {
   position: absolute;
   bottom: 4rem;
-  width: 170px;
+  width: 250px;
   display: flex;
   justify-content: space-between;
 }
@@ -797,6 +797,10 @@ span {
 .home.show-animate .animate {
   animation: showRight 1s ease forwards;
   animation-delay: calc(0.3s * var(--i));
+}
+
+#contact {
+  padding: 150px 0 100px 0;
 }
 
 .animate.scroll {
