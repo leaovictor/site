@@ -40,12 +40,11 @@
 //   }
 // }
 
-
 // NOVO CÓDIGO PARA TAMBÉM ENVIAR PRO MEU E-MAIL
 
 const { MongoClient } = require("mongodb");
 const enviarEmail = require("./enviar-email"); // Importe a função enviarEmail
-const moment = require('moment-timezone');
+const moment = require("moment-timezone");
 
 async function conectarAoMongoDB(req) {
   // Adicione o parâmetro 'req' aqui
@@ -64,10 +63,10 @@ async function conectarAoMongoDB(req) {
 
     const dadosFormulario = req.body; // Supondo que os dados do formulário estejam disponíveis no objeto req.body
 
-      // Obter a data e hora atual do envio do formulário no fuso horário de Brasília
-      const dataEnvio = moment().tz('America/Sao_Paulo').format();
+    // Obter a data e hora atual do envio do formulário no fuso horário de Brasília
+    const dataEnvio = moment().tz("America/Sao_Paulo").format();
 
-      dadosFormulario.shipping = dataEnvio;
+    dadosFormulario.shipping = dataEnvio;
 
     // Inserir os dados na coleção
     const resultadoInsercao = await collection.insertOne(dadosFormulario);
@@ -85,6 +84,15 @@ async function conectarAoMongoDB(req) {
 }
 
 module.exports = async (req, res) => {
+  // Código para exibir um alerta após o envio do formulário
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); // Impede o envio normal do formulário
+
+      // Exibe o alerta
+      alert("Formulário enviado com sucesso! Obrigado por entrar em contato.");
+    });
   try {
     await conectarAoMongoDB(req);
 
@@ -105,8 +113,4 @@ module.exports = async (req, res) => {
     console.error("Erro ao processar a solicitação:", error);
     res.status(500).send("Ocorreu um erro ao processar a solicitação");
   }
-
 };
-
-
-
