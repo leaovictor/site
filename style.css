@@ -290,7 +290,7 @@ section {
 
 .home-imgHover:hover {
   background: #000000; /* Define a cor de fundo preto quando o elemento está sendo alvo do efeito hover */
-  opacity: 0.5; /* Opcional: se desejar que a opacidade seja 1 (totalmente opaco) quando estiver no hover */
+  opacity: 0.6; /* Opcional: se desejar que a opacidade seja 1 (totalmente opaco) quando estiver no hover */
 }
 
 
@@ -712,6 +712,7 @@ span {
   align-items: center;
   flex-wrap: wrap;
   padding: 2rem 9%;
+  margin-top: 100px;
   background: var(--second-bg-color);
 }
 
