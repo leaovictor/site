@@ -101,7 +101,7 @@ module.exports = async (req, res) => {
 
       // Exiba um alerta ao invés de redirecionar
       res.send(
-        `<script>alert("Formulário enviado com sucesso! Obrigado por entrar em contato."); window.location.href = './';</script>`
+        `<script>alert("Formulário enviado com sucesso! Obrigado por entrar em contato."); window.location.href = '../thankyou.html';</script>`
       );
     } else {
       res.status(500).send("Ocorreu um erro ao processar a solicitação.");
