@@ -84,15 +84,6 @@ async function conectarAoMongoDB(req) {
 }
 
 module.exports = async (req, res) => {
-  // Código para exibir um alerta após o envio do formulário
-  document
-    .getElementById("contact-form")
-    .addEventListener("submit", function (event) {
-      event.preventDefault(); // Impede o envio normal do formulário
-
-      // Exibe o alerta
-      alert("Formulário enviado com sucesso! Obrigado por entrar em contato.");
-    });
   try {
     await conectarAoMongoDB(req);
 
@@ -101,11 +92,17 @@ module.exports = async (req, res) => {
 
     // Verifica se o email foi enviado com sucesso e envia a resposta para o cliente
     if (resultadoEnvioEmail.success) {
-      res
-        .status(200)
-        .send(
-          "Dados do formulário recebidos, inseridos no MongoDB e email enviado com sucesso!"
-        );
+      // Remova o código de redirecionamento
+      // res
+      //   .status(200)
+      //   .send(
+      //     "Dados do formulário recebidos, inseridos no MongoDB e email enviado com sucesso!"
+      //   );
+
+      // Exiba um alerta ao invés de redirecionar
+      res.send(
+        `<script>alert("Formulário enviado com sucesso! Obrigado por entrar em contato."); window.location.href = './';</script>`
+      );
     } else {
       res.status(500).send("Ocorreu um erro ao processar a solicitação.");
     }
