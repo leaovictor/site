@@ -108,6 +108,7 @@ section {
   align-items: center;
   padding: 0 9%;
   background: url(/images/fotoPrincipal2.png) no-repeat;
+  filter: brightness(0.7);
   background-size: cover;
   background-position: center;
 }
@@ -285,6 +286,7 @@ section {
   height: 100%;
   background: transparent; /* Altera a cor de fundo inicial para transparente */
   opacity: 0.8;
+  filter: brightness(0.7);
   transition: 3s;
 }
 
