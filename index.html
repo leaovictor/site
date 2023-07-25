@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
     <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
@@ -18,47 +18,76 @@
     <!-- Box icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>I'm Victor.</title>
+    <title class="translation" data-lang="en">I'm Victor.</title>
+    <title class="translation" data-lang="pt">Eu sou o Victor.</title>
+
 </head>
 
 <body>
     <header class="header">
+        <!-- Coloque este elemento no topo do corpo do HTML -->
+        <div class="floating-flag" data-language="pt">
+            <img src="./images/brasil.png" alt="Bandeira do Brasil">
+        </div>
+
         <a href="#" class="logo">V<span class="blinking-underscore" style="color: #00abf0">_</span><span class="animate"
                 style="--i:1;"></span></a>
         <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span>
         </div>
 
         <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" class="active translation" data-lang="en">Home</a>
+            <a href="#about" class="translation" data-lang="en">About</a>
+            <a href="#education" class="translation" data-lang="en">Education</a>
+            <a href="#skills" class="translation" data-lang="en">Skills</a>
+            <a href="#contact" class="translation" data-lang="en">Contact</a>
+
+            <a href="#home" class="active translation" data-lang="pt">Início</a>
+            <a href="#about" class="translation" data-lang="pt">Sobre</a>
+            <a href="#education" class="translation" data-lang="pt">Educação</a>
+            <a href="#skills" class="translation" data-lang="pt">Habilidades</a>
+            <a href="#contact" class="translation" data-lang="pt">Contato</a>
 
             <span class="active-nav"></span>
             <span class="animate" style="--i:2;"></span>
         </nav>
+
     </header>
 
     <!-- home section design -->
     <section class="home show-animate" id="home">
         <div class="home-content">
-            <h1>I'm <span>Victor Leão</span><span class="animate" style="--i:2;"></span></h1>
+            <h1 class="translation" data-lang="en">I'm <span>Victor Leão</span><span class="animate"
+                    style="--i:2;"></span></h1>
+            <h1 class="translation" data-lang="pt">Eu sou o <span>Victor Leão</span><span class="animate"
+                    style="--i:2;"></span></h1>
+
             <div class="text-animate">
-                <h3>Software Engineer</h3>
+                <h3 class="translation" data-lang="en">Software Engineer</h3>
+                <h3 class="translation" data-lang="pt">Software Engineer</h3>
                 <span class="animate" style="--i:3;"></span>
             </div>
-            <p>I am a Software Engineer with a strong emphasis on Software Quality and Testing. With my expertise in
-                developing and delivering high-quality software solutions, I strive to ensure that software products
-                meet the highest standards of reliability, performance, and user satisfaction.<span class="animate"
-                    style="--i:4;"></span></p>
+
+            <p class="translation" data-lang="en">I am a Software Engineer with a strong emphasis on Software Quality
+                and Testing. With my expertise in developing and delivering high-quality software solutions, I strive to
+                ensure that software products meet the highest standards of reliability, performance, and user
+                satisfaction.<span class="animate" style="--i:4;"></span></p>
+            <p class="translation" data-lang="pt">Sou um Engenheiro de Software com uma forte ênfase em Qualidade de
+                Software e Testes. Com minha expertise em desenvolver e entregar soluções de software de alta qualidade,
+                busco garantir que os produtos de software atendam aos mais altos padrões de confiabilidade, desempenho
+                e satisfação do usuário.<span class="animate" style="--i:4;"></span></p>
 
             <div class="btn-box">
-                <a href="/cv/curriculoVictor.doc" class="btn">Hire Me</a>
-                <a href="https://wa.me/5581996519000" target="_blank" class="btn">Let's Talk</a>
+                <a href="/cv/curriculoVictor.doc" class="btn translation" data-lang="en">Hire Me</a>
+                <a href="https://wa.me/5581996519000" target="_blank" class="btn translation" data-lang="en">Let's
+                    Talk</a>
+                <a href="/cv/curriculoVictor.doc" class="btn translation" data-lang="pt">Contrate-me</a>
+                <a href="https://wa.me/5581996519000" target="_blank" class="btn translation"
+                    data-lang="pt">Whatsapp</a>
                 <span class="animate" style="--i:5;"></span>
             </div>
         </div>
+
         <div class="home-sci">
             <a href="https://www.instagram.com/victorleaoreal/" target="_blank"><i class='bx bxl-instagram'></i></a>
             <a href="https://twitter.com/victorleaoreal" target="_blank"><i class='bx bxl-twitter'></i></a>
@@ -73,9 +102,13 @@
 
     </section>
 
-    <!-- About section design -->
     <section class="about" id="about">
-        <h2 class="heading">About <span>Me</span></h2>
+        <div class="heading">
+
+            <h2 class="translation" data-lang="en">About <span class="translation" data-lang="en">Me</span></h2>
+            <h2 class="translation" data-lang="pt">Sobre <span class="translation" data-lang="pt">Mim</span></h2>
+        </div>
+
         <!-- <span class="animate scroll" style="--i:1;"></span> -->
         <div class="about-img">
             <img src="/images/sobreMim.png" alt="">
@@ -83,12 +116,13 @@
             <!-- <span class="animate scroll" style="--i:2;"></span> -->
         </div>
         <div class="about-content">
-            <h3>Software Engineer | Testing</h3>
+            <h3 class="translation" data-lang="en">Software Engineer</h3>
+            <h3 class="translation" data-lang="pt">Engenheiro de Software</h3>
             <!-- <span class="animate scroll" style="--i:1;"></span> -->
-            <p> I have a unique journey that led me to where I am today. For 15 years, I served as a military
-                professional, dedicating myself to my country and acquiring valuable skills along the way. However, in
-                the last 3 years, I made a courageous decision to pursue a career change and immerse myself in the world
-                of technology.
+            <p class="translation" data-lang="en">I have a unique journey that led me to where I am today. For 15 years,
+                I served as a military professional, dedicating myself to my country and acquiring valuable skills along
+                the way. However, in the last 3 years, I made a courageous decision to pursue a career change and
+                immerse myself in the world of technology.
                 <br><br>
                 Driven by my passion for technology, I embarked on a new path, eager to learn and grow in this
                 ever-evolving field. The decision to transition into the tech industry was not an easy one, but it has
@@ -109,59 +143,119 @@
                 engineering.
                 <!-- <span class="animate scroll" style="--i:4;"></span> -->
             </p>
+            <p class="translation" data-lang="pt">Eu tenho uma jornada única que me levou até onde estou hoje. Durante
+                15 anos, servi como profissional militar, me dedicando ao meu país e adquirindo habilidades valiosas ao
+                longo do caminho. No entanto, nos últimos 3 anos, tomei uma decisão corajosa de buscar uma mudança de
+                carreira e me inserir no mundo da tecnologia.
+                <br><br>
+                Impulsionado pela minha paixão pela tecnologia, embarquei em um novo caminho, ansioso para aprender e
+                crescer neste campo em constante evolução. A decisão de migrar para a indústria de tecnologia não foi
+                fácil, mas abriu oportunidades empolgantes para mim. Fico fascinado pelas vastas possibilidades que a
+                tecnologia oferece e como ela pode moldar o mundo em que vivemos.
+                <br><br>
+                Neste novo capítulo da minha vida, estou abraçando os desafios e recompensas que vêm com o trabalho de
+                Engenheiro de Software. Com foco em aprendizado contínuo e atualização com os últimos avanços, estou
+                determinado a contribuir com minhas habilidades e conhecimentos para desenvolver soluções de software
+                inovadoras.
+                <br><br>
+                Enquanto busco minhas ambições profissionais, também valorizo meu papel como marido e pai. Sou abençoado
+                por ser casado e ter uma linda filha. Ser pai me ensinou a importância do equilíbrio, resiliência e o
+                desejo de criar um futuro melhor para minha família.
+                <br><br>
+                Estou empolgado com as possibilidades que estão à frente e ansioso para combinar minhas experiências
+                passadas, dedicação e nova paixão pela tecnologia para fazer um impacto significativo no mundo da
+                engenharia de software.
+                <!-- <span class="animate scroll" style="--i:4;"></span> -->
+            </p>
 
             <!-- <div class="btn-box btns">
                 <a href="#" class="btn">Read More</a>
                 <span class="animate scroll" style="--i:5;"></span>
             </div> -->
-
         </div>
     </section>
 
-    <!-- Education section desgin -->
+
+    <!-- Education section design -->
     <section class="education" id="education">
-        <h2 class="heading">My <span>Journey</span></h2>
-        <!-- <span class="animate scroll" style="--i:1;"></span> -->
+        <div class="heading">
+            <h2 class="translation" data-lang="en">My <span class="translation" data-lang="en">Journey</span></h2>
+            <h2 class="translation" data-lang="pt">Minha <span class="translation" data-lang="pt">Jornada</span></h2>
+            <!-- <span class="animate scroll" style="--i:1;"></span> -->
+        </div>
+
         <div class="education-row">
             <div class="education-column">
-                <h3 class="title">Education<span class="animate scroll" style="--i:2;"></span></h3>
+                <h3 class="title"><span class="translation" data-lang="en" style="color: #ededed;">Education</span><span
+                        class="translation" data-lang="pt" style="color: #ededed;">Educação</span></h3>
                 <div class="education-box">
                     <div class="education-content">
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i> 2020 - 2023</div>
-                            <h3>Bachelor's Degree in Financial Management - FAM</h3>
-                            <p>During the program, I gained a deep understanding of finance, accounting, investments,
-                                and risk management. This experience has equipped me to make strategic financial
-                                decisions, analyze financial data accurately, and contribute to the success of
-                                organizations through effective financial management.</p>
+                            <h3><span class="translation" data-lang="en" style="color: #ededed;">Bachelor's Degree in
+                                    Financial Management -
+                                    FAM</span><span class="translation" data-lang="pt"
+                                    style="color: #ededed;">Bacharelado em Administração
+                                    Financeira - FAM</span></h3>
+                            <p class="translation" data-lang="en">During the program, I gained a deep understanding of
+                                finance, accounting, investments, and risk management. This experience has equipped me
+                                to make strategic financial decisions, analyze financial data accurately, and contribute
+                                to the success of organizations through effective financial management.</p>
+                            <p class="translation" data-lang="pt">Durante o programa, adquiri um profundo conhecimento
+                                em finanças, contabilidade, investimentos e gestão de riscos. Essa experiência me
+                                capacitou a tomar decisões financeiras estratégicas, analisar dados financeiros com
+                                precisão e contribuir para o sucesso das organizações por meio de uma gestão financeira
+                                eficaz.</p>
                         </div>
                     </div>
 
                     <div class="education-content">
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i> 2023 </div>
-                            <h3>Post-graduated in Software Engineering with a focus on Quality Assurance and Software
-                                Testing - Anhanguera</h3>
-                            <p>My specialization in software quality and software testing has provided me with a
-                                comprehensive understanding of best practices and methodologies to ensure the
-                                reliability, performance, and security of software applications. I have developed skills
-                                in test strategy development, identification and documentation of test cases, execution
-                                of functional and non-functional tests, as well as result analysis and defect reporting.
-                            </p>
+                            <h3><span class="translation" data-lang="en" style="color: #ededed;">Post-graduated in
+                                    Software Engineering with a
+                                    focus on Quality Assurance and Software Testing - Anhanguera</span><span
+                                    class="translation" data-lang="pt" style="color: #ededed;">Pós-graduação em
+                                    Engenharia de Software com foco
+                                    em Garantia de Qualidade e Teste de Software - Anhanguera</span></h3>
+                            <p class="translation" data-lang="en">My specialization in software quality and software
+                                testing has provided me with a comprehensive understanding of best practices and
+                                methodologies to ensure the reliability, performance, and security of software
+                                applications. I have developed skills in test strategy development, identification and
+                                documentation of test cases, execution of functional and non-functional tests, as well
+                                as result analysis and defect reporting.</p>
+                            <p class="translation" data-lang="pt">Minha especialização em qualidade de software e teste
+                                de software proporcionou-me uma compreensão abrangente das melhores práticas e
+                                metodologias para garantir a confiabilidade, desempenho e segurança de aplicativos de
+                                software. Desenvolvi habilidades em desenvolvimento de estratégias de teste,
+                                identificação e documentação de casos de teste, execução de testes funcionais e não
+                                funcionais, bem como análise de resultados e relatório de defeitos.</p>
                         </div>
                     </div>
 
                     <div class="education-content">
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i> 2021 - 2023</div>
-                            <h3>Professional Developer - Digital House</h3>
-                            <p>The "Professional Developer" course is an educational program designed to empower and
-                                enhance software development skills. During the course, participants are exposed to
-                                advanced programming concepts, agile development methodologies, software architecture,
-                                and best coding practices. Additionally, opportunities are provided to enhance
-                                problem-solving skills, teamwork collaboration, and project management. The aim of the
-                                course is to prepare students to become highly competent and effective professional
-                                developers in the job market.</p>
+                            <h3><span class="translation" data-lang="en" style="color: #ededed;">Professional Developer
+                                    - Digital
+                                    House</span><span class="translation" data-lang="pt"
+                                    style="color: #ededed;">Desenvolvedor Profissional -
+                                    Digital House</span></h3>
+                            <p class="translation" data-lang="en">The "Professional Developer" course is an educational
+                                program designed to empower and enhance software development skills. During the course,
+                                participants are exposed to advanced programming concepts, agile development
+                                methodologies, software architecture, and best coding practices. Additionally,
+                                opportunities are provided to enhance problem-solving skills, teamwork collaboration,
+                                and project management. The aim of the course is to prepare students to become highly
+                                competent and effective professional developers in the job market.</p>
+                            <p class="translation" data-lang="pt">O curso "Desenvolvedor Profissional" é um programa
+                                educacional projetado para capacitar e aprimorar habilidades de desenvolvimento de
+                                software. Durante o curso, os participantes são expostos a conceitos avançados de
+                                programação, metodologias ágeis de desenvolvimento, arquitetura de software e melhores
+                                práticas de codificação. Além disso, são oferecidas oportunidades para aprimorar
+                                habilidades de resolução de problemas, colaboração em equipe e gerenciamento de
+                                projetos. O objetivo do curso é preparar os estudantes para se tornarem desenvolvedores
+                                profissionais altamente competentes e eficazes no mercado de trabalho.</p>
                         </div>
                     </div>
                     <!-- <span class="animate scroll" style="--i:3;"></span> -->
@@ -169,51 +263,89 @@
             </div>
 
             <div class="education-column">
-                <h3 class="title">Experience</span></h3>
+                <h3 class="title"><span class="translation" data-lang="en"
+                        style="color: #ededed;">Experience</span><span class="translation" data-lang="pt"
+                        style="color: #ededed;">Experiência</span></h3>
                 <!-- <span class="animate scroll" style="--i:5;"></span> -->
                 <div class="education-box">
                     <div class="education-content">
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i> 2008 - 2023</div>
-                            <h3>Military of the Brazilian Navy</h3>
-                            <p>As a commissioned military officer in the Brazilian Navy, I have gained valuable skills
-                                and experiences throughout my career. Working in a highly disciplined environment, I was
-                                trained to maintain a high standard of professionalism, leadership, and teamwork. During
-                                my time in the Navy, I developed essential competencies such as organization, quick and
-                                effective decision-making, problem-solving, and adaptability to different situations.
-                                Additionally, I learned to handle responsibilities and perform under pressure, always
-                                striving to accomplish assigned missions. My military experience has provided me with a
-                                solid foundation of discipline, ethics, and determination, qualities that I carry with
-                                me in my professional journey.</p>
+                            <h3><span class="translation" data-lang="en" style="color: #ededed;">Military of the
+                                    Brazilian Navy</span><span class="translation" data-lang="pt"
+                                    style="color: #ededed;">Marinha do Brasil</span></h3>
+                            <p class="translation" data-lang="en">As a commissioned military officer in the Brazilian
+                                Navy, I have gained valuable skills and experiences throughout my career. Working in a
+                                highly disciplined environment, I was trained to maintain a high standard of
+                                professionalism, leadership, and teamwork. During my time in the Navy, I developed
+                                essential competencies such as organization, quick and effective decision-making,
+                                problem-solving, and adaptability to different situations. Additionally, I learned to
+                                handle responsibilities and perform under pressure, always striving to accomplish
+                                assigned missions. My military experience has provided me with a solid foundation of
+                                discipline, ethics, and determination, qualities that I carry with me in my professional
+                                journey.</p>
+                            <p class="translation" data-lang="pt">Como oficial militar comissionado na Marinha do
+                                Brasil, adquiri habilidades valiosas e experiências ao longo de minha carreira.
+                                Trabalhando em um ambiente altamente disciplinado, fui treinado para manter um alto
+                                padrão de profissionalismo, liderança e trabalho em equipe. Durante meu tempo na
+                                Marinha, desenvolvi competências essenciais, como organização, tomada de decisões
+                                rápidas e eficazes, resolução de problemas e adaptabilidade a diferentes situações. Além
+                                disso, aprendi a lidar com responsabilidades e a trabalhar sob pressão, sempre me
+                                esforçando para cumprir as missões atribuídas. Minha experiência militar me proporcionou
+                                uma sólida base de disciplina, ética e determinação, qualidades que carrego comigo em
+                                minha jornada profissional.</p>
                         </div>
                     </div>
 
                     <div class="education-content">
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i> 2023</div>
-                            <h3>Freelancer Tester - Crowdtest</h3>
-                            <p>As a freelancer, I worked as a tester at Crowdtest. My role involved testing various
-                                software applications, websites, and mobile apps to identify bugs, usability issues, and
-                                provide feedback to improve the overall quality of the products. I collaborated with
-                                development teams, followed test plans, executed test cases, and reported any issues or
-                                defects encountered during the testing process. Working in a dynamic and remote
-                                environment, I honed my skills in exploratory testing, test case design, and
-                                communication with stakeholders. It was a valuable experience that allowed me to
-                                contribute to the success of multiple projects while further developing my expertise in
-                                software testing.</p>
+                            <h3><span class="translation" data-lang="en" style="color: #ededed;">Freelancer Tester -
+                                    Crowdtest</span><span class="translation" data-lang="pt"
+                                    style="color: #ededed;">Testador Freelancer - Crowdtest</span></h3>
+                            <p class="translation" data-lang="en">As a freelancer, I worked as a tester at Crowdtest. My
+                                role involved testing various software applications, websites, and mobile apps to
+                                identify bugs, usability issues, and provide feedback to improve the overall quality of
+                                the products. I collaborated with development teams, followed test plans, executed test
+                                cases, and reported any issues or defects encountered during the testing process.
+                                Working in a dynamic and remote environment, I honed my skills in exploratory testing,
+                                test case design, and communication with stakeholders. It was a valuable experience that
+                                allowed me to contribute to the success of multiple projects while further developing my
+                                expertise in software testing.</p>
+                            <p class="translation" data-lang="pt">Como freelancer, trabalhei como testador na Crowdtest.
+                                Minha função envolvia testar diversos aplicativos de software, sites e aplicativos
+                                móveis para identificar bugs, problemas de usabilidade e fornecer feedback para melhorar
+                                a qualidade geral dos produtos. Colaborei com equipes de desenvolvimento, segui planos
+                                de teste, executei casos de teste e relatei quaisquer problemas ou defeitos encontrados
+                                durante o processo de teste. Trabalhando em um ambiente dinâmico e remoto, aprimorei
+                                minhas habilidades em testes exploratórios, design de casos de teste e comunicação com
+                                as partes interessadas. Foi uma experiência valiosa que me permitiu contribuir para o
+                                sucesso de vários projetos, ao mesmo tempo em que aprofundava minha experiência em
+                                testes de software.</p>
                         </div>
                     </div>
 
                     <div class="education-content">
                         <div class="content">
                             <div class="year"><i class='bx bxs-calendar'></i> 2023</div>
-                            <h3>Personal project</h3>
-                            <p>In my personal project, I am developing a program for fire extinguisher control
-                                specifically for a renowned car manufacturer in Brazil. The program aims to streamline
-                                and enhance the management of fire extinguishers within their facilities, ensuring
-                                compliance with safety regulations and optimizing maintenance processes. By leveraging
-                                my skills and expertise in software development, I am dedicated to delivering a reliable
-                                and efficient solution that meets the specific needs of the automotive industry.</p>
+                            <h3><span class="translation" data-lang="en" style="color: #ededed;">Personal
+                                    project</span><span class="translation" data-lang="pt"
+                                    style="color: #ededed;">Projeto pessoal</span></h3>
+                            <p class="translation" data-lang="en">In my personal project, I am developing a program for
+                                fire extinguisher control specifically for a renowned car manufacturer in Brazil. The
+                                program aims to streamline and enhance the management of fire extinguishers within their
+                                facilities, ensuring compliance with safety regulations and optimizing maintenance
+                                processes. By leveraging my skills and expertise in software development, I am dedicated
+                                to delivering a reliable and efficient solution that meets the specific needs of the
+                                automotive industry.</p>
+                            <p class="translation" data-lang="pt">Em meu projeto pessoal, estou desenvolvendo um
+                                programa para controle de extintores de incêndio especificamente para um renomado
+                                fabricante de automóveis no Brasil. O programa tem como objetivo otimizar e aprimorar a
+                                gestão de extintores de incêndio em suas instalações, garantindo o cumprimento das
+                                regulamentações de segurança e otimizando os processos de manutenção. Utilizando minhas
+                                habilidades e conhecimentos em desenvolvimento de software, estou empenhado em fornecer
+                                uma solução confiável e eficiente que atenda às necessidades específicas da indústria
+                                automotiva.</p>
                         </div>
                     </div>
                     <!-- <span class="animate scroll" style="--i:6;"></span> -->
@@ -222,14 +354,19 @@
         </div>
     </section>
 
-    <!-- skills section design -->
+    <!-- Skills section design -->
     <section class="skills" id="skills">
-        <h2 class="heading">My <span>Skills</span></h2>
+        <h2 class="translation heading" data-lang="en">My <span class="translation" data-lang="en">Skills</span></h2>
+        <h2 class="translation heading" data-lang="pt">Minhas <span class="translation"
+                data-lang="pt">Habilidades</span></h2>
+
         <!-- <span class="animate scroll" style="--i:1;"></span> -->
 
         <div class="skills-row">
             <div class="skills-column">
-                <h3 class="title">Coding Skills</h3>
+                <h3 class="title"><span class="translation" data-lang="en" style="color: #ededed;">Coding
+                        Skills</span><span class="translation" data-lang="pt" style="color: #ededed;">Habilidades de
+                        Codificação</span></h3>
                 <!-- <span class="animate scroll" style="--i:2;"></span> -->
 
                 <div class="skills-box">
@@ -279,50 +416,63 @@
                 </div>
             </div>
             <div class="skills-column">
-                <h3 class="title">Professional Skills</h3>
+                <h3 class="title"><span class="translation" data-lang="en" style="color: #ededed;">Professional
+                        Skills</span><span class="translation" data-lang="pt" style="color: #ededed;">Habilidades
+                        Profissionais</span></h3>
                 <!-- <span class="animate scroll" style="--i:5;"></span>: -->
 
                 <div class="skills-box">
                     <div class="skills-content">
                         <div class="progress">
-                            <h3>Effective communication <span>90%</span></h3>
-                            <div class="bar"><span></span></div>
+                            <h3><span class="translation" data-lang="en">Effective communication</span><span
+                                    class="translation" data-lang="pt">Comunicação Eficaz</span> <span>90%</span></h3>
+                            <div class="bar"><span style="width: 90%;"></span></div>
                         </div>
                         <div class="progress">
-                            <h3>Teamwork <span>100%</span></h3>
-                            <div class="bar"><span></span></div>
+                            <h3><span class="translation" data-lang="en">Teamwork</span><span class="translation"
+                                    data-lang="pt">Trabalho em Equipe</span> <span>100%</span></h3>
+                            <div class="bar"><span style="width: 100%;"></span></div>
                         </div>
                         <div class="progress">
-                            <h3>Critical thinking <span>80%</span></h3>
-                            <div class="bar"><span></span></div>
+                            <h3><span class="translation" data-lang="en">Critical thinking</span><span
+                                    class="translation" data-lang="pt">Pensamento Crítico</span> <span>80%</span></h3>
+                            <div class="bar"><span style="width: 80%;"></span></div>
                         </div>
                         <div class="progress">
-                            <h3>Problem-solving <span>90%</span></h3>
-                            <div class="bar"><span></span></div>
+                            <h3><span class="translation" data-lang="en">Problem-solving</span><span class="translation"
+                                    data-lang="pt">Resolução de Problemas</span> <span>90%</span></h3>
+                            <div class="bar"><span style="width: 90%;"></span></div>
                         </div>
                         <div class="progress">
-                            <h3>Leadership <span>100%</span></h3>
-                            <div class="bar"><span></span></div>
+                            <h3><span class="translation" data-lang="en">Leadership</span><span class="translation"
+                                    data-lang="pt">Liderança</span> <span>100%</span></h3>
+                            <div class="bar"><span style="width: 100%;"></span></div>
                         </div>
                         <div class="progress">
-                            <h3>Adaptability <span>100%</span></h3>
-                            <div class="bar"><span></span></div>
+                            <h3><span class="translation" data-lang="en">Adaptability</span><span class="translation"
+                                    data-lang="pt">Adaptabilidade</span> <span>100%</span></h3>
+                            <div class="bar"><span style="width: 100%;"></span></div>
                         </div>
                         <div class="progress">
-                            <h3>Time management <span>90%</span></h3>
-                            <div class="bar"><span></span></div>
+                            <h3><span class="translation" data-lang="en">Time management</span><span class="translation"
+                                    data-lang="pt">Gestão do Tempo</span> <span>90%</span></h3>
+                            <div class="bar"><span style="width: 90%;"></span></div>
                         </div>
                         <div class="progress">
-                            <h3>Analytical thinking <span>70%</span></h3>
-                            <div class="bar"><span></span></div>
+                            <h3><span class="translation" data-lang="en">Analytical thinking</span><span
+                                    class="translation" data-lang="pt">Pensamento Analítico</span> <span>70%</span></h3>
+                            <div class="bar"><span style="width: 70%;"></span></div>
                         </div>
                         <div class="progress">
-                            <h3>Results orientation <span>100%</span></h3>
-                            <div class="bar"><span></span></div>
+                            <h3><span class="translation" data-lang="en">Results orientation</span><span
+                                    class="translation" data-lang="pt">Orientação para Resultados</span>
+                                <span>100%</span></h3>
+                            <div class="bar"><span style="width: 100%;"></span></div>
                         </div>
                         <div class="progress">
-                            <h3>Flexibility <span>100%</span></h3>
-                            <div class="bar"><span></span></div>
+                            <h3><span class="translation" data-lang="en">Flexibility</span><span class="translation"
+                                    data-lang="pt">Flexibilidade</span> <span>100%</span></h3>
+                            <div class="bar"><span style="width: 100%;"></span></div>
                         </div>
                     </div>
                     <!-- <span class="animate scroll" style="--i:6;"></span> -->
@@ -331,44 +481,55 @@
         </div>
     </section>
 
+
     <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2></span>
-    <!-- </span><span class="animate scroll" style="--i:1;"> -->
+        <h2 class="heading translation" data-lang="en">Contact <span class="translation" data-lang="en">Me!</span></h2>
+        <h2 class="heading translation" data-lang="pt">Entre em <span class="translation" data-lang="pt">Contato!</span>
+        </h2>
+
+        <!-- </span><span class="animate scroll" style="--i:1;"> -->
         <form action="/api/enviar-dados" method="POST" id="contact-form">
             <div class="input-box">
-              <div class="input-field">
-                <input type="text" placeholder="Full Name" name="fullName" required>
-                <span class="focus"></span>
-              </div>
-              <div class="input-field">
-                <input type="email" placeholder="Email Address" name="emailAddress" required>
-                <span class="focus"></span>
-              </div>
-              <!-- <span class="animate scroll" style="--i:3;"></span> -->
+                <div class="input-field">
+                    <input type="text" placeholder="Full Name" name="fullName" required>
+                    <span class="focus"></span>
+                </div>
+                <div class="input-field">
+                    <input type="email" placeholder="Email Address" name="emailAddress" required>
+                    <span class="focus"></span>
+                </div>
+                <!-- <span class="animate scroll" style="--i:3;"></span> -->
             </div>
             <div class="input-box">
-              <div class="input-field">
-                <input type="tel" placeholder="Mobile Number" name="mobileNumber" required>
-                <span class="focus"></span>
-              </div>
-              <div class="input-field">
-                <input type="text" placeholder="Email Subject" name="emailSubject" required>
-                <span class="focus"></span>
-              </div>
-              <!-- <span class="animate scroll" style="--i:5;"></span> -->
+                <div class="input-field">
+                    <input type="tel" placeholder="Mobile Number" name="mobileNumber" required>
+                    <span class="focus"></span>
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="Email Subject" name="emailSubject" required>
+                    <span class="focus"></span>
+                </div>
+                <!-- <span class="animate scroll" style="--i:5;"></span> -->
             </div>
             <div class="textarea-field">
-              <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
-              <span class="focus"></span>
-              <!-- <span class="animate scroll" style="--i:7;"></span> -->
+                <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <span class="focus"></span>
+                <!-- <span class="animate scroll" style="--i:7;"></span> -->
             </div>
             <div class="btn-box btns">
-              <button type="submit" class="btn">Submit</button>
-              <!-- <span class="animate scroll" style="--i:9;"></span> -->
+                <button type="submit" class="btn translation" data-lang="en">
+                    <span class="btn">Submit</span>
+                </button>
+                <button type="submit" class="btn translation" data-lang="pt">
+                    <span class="btn">Enviar</span>
+                </button>
             </div>
-          </form>
+            
+
+
+        </form>
     </section>
-          
+
 
 
     <!-- footer design  -->
@@ -385,6 +546,54 @@
         </div>
     </footer>
     <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Verificar o idioma atual da página
+            var currentLanguage = "en"; // Inglês como padrão (defina de acordo com o idioma padrão do seu site)
+
+            // Alterne o idioma do site
+            function toggleLanguage() {
+                // Obtenha todos os elementos com a classe "translation"
+                var translations = $(".translation");
+
+                // Oculte todos os elementos com o atributo data-lang diferente do idioma atual
+                translations.each(function () {
+                    var lang = $(this).attr("data-lang");
+                    if (lang !== currentLanguage) {
+                        $(this).hide();
+                    } else {
+                        $(this).show();
+                    }
+                });
+            }
+
+            // Adicione um evento de clique para alternar a bandeira e o idioma
+            $(".floating-flag").click(function () {
+                // Alterne o idioma entre inglês e português (ou vice-versa)
+                currentLanguage = currentLanguage === "en" ? "pt" : "en";
+
+                // Atualize a bandeira com base no novo idioma selecionado
+                var floatingFlag = $(".floating-flag");
+                if (currentLanguage === "en") {
+                    floatingFlag.attr("data-language", "pt");
+                    floatingFlag.find("img").attr("src", "./images/brasil.png");
+                    floatingFlag.attr("title", "Change to English");
+                } else {
+                    floatingFlag.attr("data-language", "en");
+                    floatingFlag.find("img").attr("src", "./images/estados-unidos.png");
+                    floatingFlag.attr("title", "Mudar para Português");
+                }
+
+                // Chame a função para alternar o idioma do site
+                toggleLanguage();
+            });
+
+            // Inicialize o idioma do site
+            toggleLanguage();
+        });
+    </script>
+
 
 </body>
 

@@ -53,3 +53,28 @@ window.onscroll = () => {
   );
 
 };
+
+// $(document).ready(function() {
+//   // Verificar o idioma atual da página
+//   var language = document.documentElement.lang;
+
+//   // Alterne a bandeira flutuante com base no idioma
+//   function toggleFloatingFlag() {
+//     var floatingFlag = $(".floating-flag");
+//     if (language === "en") {
+//       floatingFlag.attr("data-language", "pt");
+//       floatingFlag.find("img").attr("src", "./images/brasil.png");
+//       floatingFlag.attr("title", "Change to English");
+//     } else {
+//       floatingFlag.attr("data-language", "en");
+//       floatingFlag.find("img").attr("src", "./images/estados-unidos.png");
+//       floatingFlag.attr("title", "Mudar para Português");
+//     }
+//   }
+
+//   // Adicione um evento de clique para alternar a bandeira
+//   $(".floating-flag").click(function() {
+//     toggleFloatingFlag();
+//   });
+// });
+
