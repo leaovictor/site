@@ -54,29 +54,4 @@ window.onscroll = () => {
 
 };
 
-// Get the floating flag element
-const floatingFlag = document.querySelector('.floating-flag');
-
-// Initialize a variable to store the previous scroll position
-let prevScrollPos = window.pageYOffset;
-
-// Add scroll event listener
-window.addEventListener('scroll', () => {
-  // Get the current scroll position
-  const currentScrollPos = window.pageYOffset;
-
-  // Check the scroll direction (left or right)
-  const scrollDirection = currentScrollPos > prevScrollPos ? 'right' : 'left';
-
-  // Update the previous scroll position
-  prevScrollPos = currentScrollPos;
-
-  // Add or remove a class to the floating flag element based on the scroll direction
-  if (scrollDirection === 'right') {
-    floatingFlag.classList.add('move-right');
-  } else {
-    floatingFlag.classList.remove('move-right');
-  }
-});
-
 
