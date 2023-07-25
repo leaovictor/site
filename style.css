@@ -1058,6 +1058,10 @@ section:nth-child(odd) .animate.scroll,
   transition: transform 0.3s ease-in-out;
 }
 
+.move-right {
+  right: 1.5rem; /* Adjust the value as needed */
+}
+
 .floating-flag img {
   width: 100%;
   height: 100%;

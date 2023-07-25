@@ -54,27 +54,29 @@ window.onscroll = () => {
 
 };
 
-// $(document).ready(function() {
-//   // Verificar o idioma atual da página
-//   var language = document.documentElement.lang;
+// Get the floating flag element
+const floatingFlag = document.querySelector('.floating-flag');
 
-//   // Alterne a bandeira flutuante com base no idioma
-//   function toggleFloatingFlag() {
-//     var floatingFlag = $(".floating-flag");
-//     if (language === "en") {
-//       floatingFlag.attr("data-language", "pt");
-//       floatingFlag.find("img").attr("src", "./images/brasil.png");
-//       floatingFlag.attr("title", "Change to English");
-//     } else {
-//       floatingFlag.attr("data-language", "en");
-//       floatingFlag.find("img").attr("src", "./images/estados-unidos.png");
-//       floatingFlag.attr("title", "Mudar para Português");
-//     }
-//   }
+// Initialize a variable to store the previous scroll position
+let prevScrollPos = window.pageYOffset;
 
-//   // Adicione um evento de clique para alternar a bandeira
-//   $(".floating-flag").click(function() {
-//     toggleFloatingFlag();
-//   });
-// });
+// Add scroll event listener
+window.addEventListener('scroll', () => {
+  // Get the current scroll position
+  const currentScrollPos = window.pageYOffset;
+
+  // Check the scroll direction (left or right)
+  const scrollDirection = currentScrollPos > prevScrollPos ? 'right' : 'left';
+
+  // Update the previous scroll position
+  prevScrollPos = currentScrollPos;
+
+  // Add or remove a class to the floating flag element based on the scroll direction
+  if (scrollDirection === 'right') {
+    floatingFlag.classList.add('move-right');
+  } else {
+    floatingFlag.classList.remove('move-right');
+  }
+});
+
 
